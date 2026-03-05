@@ -1,1 +1,59 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0;
+}
+
+.card {
+  width: 50%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.card img {
+  width: 50%;
+  height: auto;
+  border: 3px solid #ccc; /* Толщина, стиль, цвет */
+  border-radius: 5px; /* Скругление углов */
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3); /* Тень */
+  display: block;
+  margin: 0 auto;
+}
+
+
+.card p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.github-link {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.github-link a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.github-link a:hover {
+  color: #007acc;
+}
