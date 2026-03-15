@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма выбора любимого напитка</title>
+</head>
+<body>
+  <form action="/submitfeedback" method="post">
+    <label for="drink">Выберите ваш любимый напиток</label>
+    <select name="drink" id="drink" required>
+      <option value="">-- Выберите напиток --</option>
+      <option value="coffee">Кофе</option>
+      <option value="tea">Чай</option>
+      <option value="smoothie">Смузи</option>
+      <option value="lemonade">Лимонад</option>
+      <option value="hot-chocolate">Горячий шоколад</option>
+    </select>
+    <button type="submit">Отправить</button>
+  </form>
+</body>
+</html>
 
