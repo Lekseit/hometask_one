@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница отзывов на товары</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    .reviews-container {
+      display: flex;
+      flex-direction: column; /* По умолчанию карточки в колонку */
+      flex-wrap: wrap; /* Карточки переносятся на новую строку */
+      align-items: center; /* Выравнивание карточек */
+      gap: 20px; /* Отступы между карточками */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Адаптация для экранов шириной от 768px */
+    @media (min-width: 768px) {
+      .reviews-container {
+        flex-direction: row; /* На больших экранах — в ряд */
+      }
+    }
+
+    .review-card {
+      flex: 1 1 300px; /* flex-grow: 1, flex-shrink: 1, flex-basis: 300px */
+      min-width: 280px; /* Минимальный размер карточки */
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .review-card img {
+      width: 100%;
+      height: auto;
+      max-height: 180px;
+      object-fit: contain;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .review-card h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .review-card .rating {
+      color: #ff9800;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .review-card p {
+      color: #666;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="reviews-container">
+    <!-- Карточка отзыва 1 -->
+    <div class="review-card">
+      <img src="https://img.freepik.com/premium-photo/icons-social-media-mobile-screen-generated-by-ai_986584-56553.jpg?semt=ais_hybrid" alt="Смартфон XYZ">
+      <h3>Смартфон XYZ</h3>
+      <div class="rating">★★★★★</div>
+      <p>Отличный смартфон! Быстрая работа, хорошая камера, долго держит заряд. Очень доволен покупкой.</p>
+    </div>
+
+    <!-- Карточка отзыва 2 -->
+    <div class="review-card">
+      <img src="https://basket-19.wbbasket.ru/vol3163/part316331/316331158/images/big/1.webp" alt="Товар 2">
+      <h3>Наушники ProSound</h3>
+      <div class="rating">★★★★☆</div>
+      <p>Качественные наушники с хорошим звуком. Немного неудобны при долгом ношении, но в целом рекомендую.</p>
+    </div>
+
+    <!-- Карточка отзыва 3 -->
+    <div class="review-card">
+      <img src="https://avatars.mds.yandex.net/i?id=e2867809a9a55574817d1f8d9a22fa9147131cf9-10650801-images-thumbs&n=13" alt="Товар 3">
+      <h3>Умные часы FitTrack</h3>
+      <div class="rating">★★★★★</div>
+      <p>Функциональные часы с множеством полезных опций. Батареи хватает на 2 дня. Дизайн стильный.</p>
+    </div>
+
+    <!-- Карточка отзыва 4 -->
+    <div class="review-card">
+      <img src="https://avatars.mds.yandex.net/get-mpic/4762868/img_id76535079514553339.jpeg/6" alt="Товар 4">
+      <h3>Планшет AirTab</h3>
+      <div class="rating">★★★★★</div>
+      <p>Превосходный планшет для работы и развлечений. Лёгкий, мощный, экран отличный. Полностью оправдал ожидания.</p>
+    </div>
+
+    <!-- Карточка отзыва 5 -->
+    <div class="review-card">
+      <img src="https://avatars.mds.yandex.net/i?id=bf637b8b79c7602089fe58430301eafe_l-3909374-images-thumbs&n=13" alt="Товар 5">
+      <h3>Беспроводная клавиатура</h3>
+      <div class="rating">★★★☆☆</div>
+      <p>Клавиатура удобная, но клавиши немного шумные. За свою цену нормально, но можно найти и лучше.</p>
+    </div>
+  </div>
+</body>
+</html>
 
