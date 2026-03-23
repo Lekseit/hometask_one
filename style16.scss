@@ -1,1 +1,80 @@
+// Переменные
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$text-color: #ecf0f1;
+$background-color: #34495e;
+$hover-color: darken($secondary-color, 10%);
+$padding-base: 20px;
+$font-family: 'Arial', sans-serif;
+
+// Примесь для контактных ссылок
+@mixin contact-link-style {
+  color: $secondary-color;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: inline-block;
+
+  &:hover {
+    background-color: lighten($hover-color, 20%);
+    color: darken($text-color, 20%);
+  }
+}
+
+// Функция для изменения цвета фона при наведении
+@function hover-bg($color) {
+  @return darken($color, 5%);
+}
+
+// Основная стилизация визитки
+.business-card {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: $padding-base;
+  background-color: $background-color;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: $font-family;
+
+  // Стилизация заголовка
+  .card-title {
+    color: $text-color;
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  // Стилизация описания
+  .card-description {
+    color: lighten($text-color, 20%);
+    line-height: 1.5;
+    margin-bottom: 25px;
+    font-size: 14px;
+  }
+
+  // Стилизация контактной информации
+  .contact-info {
+    .contact-item {
+      margin-bottom: 15px;
+
+      .contact-label {
+        color: lighten($text-color, 30%);
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      // Применение примеси к контактным ссылкам
+      .contact-link {
+        @include contact-link-style;
+        background-color: transparent;
+
+        &:hover {
+          background-color: hover-bg($secondary-color);
+        }
+      }
+    }
+  }
+}
 
