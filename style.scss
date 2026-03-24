@@ -1,1 +1,106 @@
+// Переменные
+$primary-color: #2c3e50;
+$accent-color: #3498db;
+$accent-hover: #2980b9;
+$text-color: #333;
+$price-color: #e74c3c;
+$bg-color: #f9f9f9;
+$card-bg: #fff;
+$border-radius: 8px;
+$padding-base: 20px;
+$margin-base: 15px;
+$font-family: 'Arial', sans-serif;
+$shadow-default: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
+
+// Примесь для кнопок
+@mixin button-style($bg-color, $hover-color) {
+  background-color: $bg-color;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $hover-color;
+    transform: translateY(-2px);
+  }
+}
+
+// Основная стилизация
+body {
+  font-family: $font-family;
+  background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $padding-base;
+
+  h1 {
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: $margin-base * 2;
+  }
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $margin-base * 2;
+
+  .product-card {
+    background: $card-bg;
+    border-radius: $border-radius;
+    padding: $padding-base;
+    box-shadow: $shadow-default;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: $shadow-hover;
+      background: lighten($card-bg, 5%);
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: $border-radius;
+      margin-bottom: $margin-base;
+    }
+
+    h3 {
+      color: $primary-color;
+      margin: 0 0 $margin-base 0;
+      font-size: 18px;
+    }
+
+    p {
+      color: $text-color;
+      line-height: 1.5;
+      margin: 0 0 $margin-base 0;
+      font-size: 14px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: $price-color;
+      font-size: 20px;
+      margin: 0 0 $margin-base 0;
+    }
+
+    .buy-btn {
+      @include button-style($accent-color, $accent-hover);
+    }
+  }
+}
+
 
