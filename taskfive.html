@@ -2,19 +2,32 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Демонстрация font-size и font-weight</title>
-    <link rel="stylesheet" href="stylesfive.css">
+    <title>Проверка делимости</title>
 </head>
 <body>
-    <h1>Заголовок 1</h1>
-    <h2>Заголовок 2</h2>
-    <p>Этот параграф стилизован с использованием font-size и font-weight (font-size: 1.2em, font-weight: 300)</p>
-    <ul>
-        <li>Элемент списка 1</li>
-        <li>Элемент списка 2</li>
-        <li>Элемент списка 3</li>
-    </ul>
-    <h6>Заголовок 6</h6>
+<script>
+    // Запрос двух чисел у пользователя
+    let xInput = prompt('Введите первое число (делимое):');
+    let yInput = prompt('Введите второе число (делитель):');
+
+    // Преобразование введённых значений в числа
+    let x = Number(xInput);
+    let y = Number(yInput);
+
+    // Проверка, являются ли введённые значения числами
+    if (isNaN(x) || isNaN(y)) {
+        alert('Ошибка: оба значения должны быть числами!');
+    } else if (y === 0) {
+        alert('Ошибка: деление на ноль невозможно!');
+    } else {
+        // Проверка делимости
+        if (x % y === 0) {
+            alert('Число ' + x + ' делится на ' + y + ' без остатка.');
+        } else {
+            let remainder = x % y;
+            alert('Число ' + x + ' не делится на ' + y + '. Остаток: ' + remainder + '.');
+        }
+    }
+</script>
 </body>
 </html>
-
