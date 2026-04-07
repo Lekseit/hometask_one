@@ -1,121 +1,37 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Адаптивная страница</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      padding: 20px;
-      background-color: #f5f5f5;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    h1 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: #666;
-      margin-bottom: 30px;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 30px;
-    }
-
-    .adaptive-button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 15px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .adaptive-button:hover {
-      background-color: #45a049;
-    }
-
-    /* Стили для мобильных устройств (до 768 px) */
-    @media (max-width: 768px) {
-      p {
-        font-size: 14px; /* Уменьшенный размер шрифта для мобильных */
-      }
-
-      .adaptive-button {
-        width: 100%; /* Кнопка на всю ширину экрана */
-        padding: 12px; /* Немного уменьшаем отступы */
-      }
-    }
-
-    /* Стили для планшетов (от 768 px до 1024 px) */
-    @media (min-width: 768px) and (max-width: 1024px) {
-      p {
-        font-size: 16px; /* Увеличенный размер шрифта для планшетов */
-      }
-
-      .adaptive-button {
-        width: 250px; /* Фиксированная ширина кнопки */
-        height: auto; /* Адаптивная высота */
-        padding: 15px 30px; /* Отступы для лучшей читаемости */
-      }
-
-      img {
-        max-width: 80%; /* Максимальная ширина 80 % от экрана */
-      }
-    }
-
-    /* Стили для десктопов (более 1024 px) */
-    @media (min-width: 1024px) {
-      .container {
-        text-align: center; /* Центрирование контента */
-      }
-      p {
-        font-size: 18px; /* Размер шрифта для десктопа */
-        max-width: 800px; /* Ограничиваем ширину текста для лучшей читаемости */
-        margin: 0 auto 30px; /* Центрируем параграф */
-      }
-      .adaptive-button {
-        width: 200px; /* Фиксированная ширина для десктопа */
-        padding: 15px 40px; /* Достаточные отступы */
-        margin: 0 auto; /* Центрируем кнопку */
-      }
-      img {
-        max-width: 90%; /* Почти полная ширина экрана */
-        width: auto; /* Позволяем ширине адаптироваться */
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Подсчёт символов</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Добро пожаловать на нашу адаптивную страницу</h1>
-    <p>Это пример адаптивного дизайна, который корректно отображается на мобильных устройствах, планшетах и десктопах. При изменении ширины экрана элементы автоматически подстраиваются под новые условия.</p>
-    <img src="https://img.freepik.com/premium-photo/icons-social-media-mobile-screen-generated-by-ai_986584-56553.jpg?semt=ais_hybrid" alt="Адаптивное изображение">
-    <button class="adaptive-button">Нажми меня</button>
-  </div>
+<script>
+    let totalChars = 0; // Общее количество символов
+    let input;
+
+    // Цикл для ввода строк
+    while (true) {
+        input = prompt('Введите строку (для завершения введите "стоп"):', '');
+
+        // Проверка на отмену ввода
+        if (input === null) {
+            break;
+        }
+
+        // Преобразуем ввод в нижний регистр для сравнения
+        if (input.toLowerCase() === 'стоп') {
+            break;
+        }
+
+        // Удаляем пробелы и подсчитываем символы
+        let charsInString = input.replace(/\s/g, '').length;
+        totalChars += charsInString;
+
+        alert('В этой строке ' + charsInString + ' символов (без пробелов).');
+    }
+
+    // Выводим общее количество символов
+    alert('Общее количество символов во всех строках (без пробелов): ' + totalChars);
+</script>
 </body>
 </html>
-
