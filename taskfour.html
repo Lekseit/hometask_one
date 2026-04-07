@@ -2,29 +2,23 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О компании</title>
-    <style>
-        body {
-            background-color: gray;
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: blue;
-            font-family: Arial, sans-serif;
-            margin-top: 0;
-        }
-        p {
-            color: green;
-            font-size: 20px;
-        }
-    </style>
+    <title>Проверка возраста</title>
 </head>
 <body>
-    <h1>О компании</h1>
-    <p>Компания «Решения для бизнеса» специализируется на предоставлении быстрых и эффективных решений для бизнеса</p>
+<script>
+    // Запрос имени пользователя
+    let name = prompt('Введите ваше имя:');
+
+    // Запрос возраста и преобразование в число
+    let age = prompt('Введите ваш возраст:');
+    let ageNumber = Number(age);
+
+    // Проверка, является ли возраст числом
+    if (isNaN(ageNumber)) {
+        alert('Ошибка: возраст должен быть числом!');
+    } else {
+        alert('Привет, ' + name + '! Тебе ' + ageNumber + ' лет.');
+    }
+</script>
 </body>
 </html>
-
